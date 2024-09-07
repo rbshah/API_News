@@ -1,44 +1,27 @@
-# importing requests package
-import requests	 
+/******************************************************************************
+ *  Compilation:  javac HelloWorld.java
+ *  Execution:    java HelloWorld
+ *
+ *  Prints "Hello, World". By tradition, this is everyone's first program.
+ *
+ *  % java HelloWorld
+ *  Hello, World
+ *
+ *  These 17 lines of text are comments. They are not part of the program;
+ *  they serve to remind us about its properties. The first two lines tell
+ *  us what to type to compile and test the program. The next line describes
+ *  the purpose of the program. The next few lines give a sample execution
+ *  of the program and the resulting output. We will always include such
+ *  lines in our programs and encourage you to do the same.
+ *
+ ******************************************************************************/
 
-def NewsFromBBC():
-	
-	# BBC news api
-	# following query parameters are used
-	# source, sortBy and apiKey
-	query_params = {
-	"source": "bbc-news",
-	"sortBy": "top",
-	"apiKey": "4dbc17e007ab436fb66416009dfb59a8"
-	}
-	main_url = " https://newsapi.org/v1/articles"
+public class HelloWorld {
 
-	# fetching data in json format
-	res = requests.get(main_url, params=query_params)
-	open_bbc_page = res.json()
+    public static void main(String[] args) {
 
-	# getting all articles in a string article
-	article = open_bbc_page["articles"]
+        // Prints "Hello, World" in the terminal window.
+        System.out.println("It's me Rahul Bikram Shah");
+    }
 
-	# empty list which will 
-	# contain all trending news
-	results = []
-	
-	for ar in article:
-		results.append(ar["title"])
-		
-	for i in range(len(results)):
-		
-		# printing all trending news
-		print(i + 1, results[i])
-
-	#to read the news out loud for us
-	from win32com.client import Dispatch
-	speak = Dispatch("SAPI.Spvoice")
-	speak.Speak(results)				 
-
-# Driver Code
-if __name__ == '__main__':
-	
-	# function call
-	NewsFromBBC() 
+}
