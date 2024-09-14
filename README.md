@@ -1,4 +1,3 @@
-**Project Title**
-Application to fetch news in real time.
-
+Hi there! This is Assignment 1-Git & Github.
+Have a great day!
 
